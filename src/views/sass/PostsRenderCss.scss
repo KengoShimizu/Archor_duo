@@ -1,0 +1,13 @@
+.postsList {
+  width: 100%;
+  max-width: 36ch;
+  background-color: white;
+  .inline {
+    display: inline;
+  }
+  .paperStyle {
+    padding: 10px;
+    word-wrap: break-word;
+    background-color: #f8f8f8;
+  }
+}

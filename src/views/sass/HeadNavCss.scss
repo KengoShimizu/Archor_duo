@@ -1,4 +1,8 @@
 .blur{
+  height: 200px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: url(../img/head.jpg) no-repeat center;
   background-size: cover;
   position: relative;
@@ -15,5 +19,11 @@
     right: -5px;
     bottom: -5px;
     z-index: -1;
+  }
+  p{
+    font-size: 30px;
+    padding: 10px;
+    border: 1px solid;
+    color: white;
   }
 }

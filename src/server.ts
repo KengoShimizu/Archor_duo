@@ -1,9 +1,9 @@
 import express from 'express';
-import sampleController from './controllers/sampleController';
+const postController = require('./controllers/postController');
 
 const app = express();
 
-app.get('/', sampleController);
+app.get('/', postController.doGetPostForSsr);
 
 //静的ファイル
 app.use(express.static('dist'))

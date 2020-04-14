@@ -2,38 +2,23 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, IconButton, createStyles, withStyles, WithStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const styles = createStyles({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-  },
-  title: {
-    flexGrow: 1,
-  },
-});
+import CommonCss from '../sass/CommonCss.scss';
 
-interface Props extends WithStyles<typeof styles> {
-}
-
-class Header extends React.Component<Props, {}> {
+class Header extends React.Component {
   render() {
-    const { classes } = this.props;
     return (
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              Title
-            </Typography>
-            <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={CommonCss.appbar}>
+            気ままアプリ
+          </Typography>
+          <IconButton edge="end" color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     );
   }
 }
 
-export default withStyles(styles)(Header);
+export default Header;

@@ -2,10 +2,9 @@ interface arguments{
   elements: {
     css: string;
     initialStyleTag: string;
-    header: string;
-    headnav: string;
-    root: string;
-    footer: string;
+    beforeDB: string;
+    postsrender: string;
+    afterDB: string;
   }
 }
 
@@ -41,10 +40,9 @@ const html = ( {elements} : arguments ) => `
       <title>Title</title>
     </head>
     <body style="margin: 0;">
-      <div id="header">${elements.header}</div>
-      <div id="headnav" style="height: 200px;">${elements.headnav}</div>
-      <div id="root">${elements.root}</div>
-      <div id="footer">${elements.footer}</div>
+      <div id="beforeDB">${elements.beforeDB}</div>
+      <div id="postsrender">${elements.postsrender}</div>
+      <div id="afterDB">${elements.afterDB}</div>
     </body>
     <script src="js/bundle.js" defer></script>
   </html>

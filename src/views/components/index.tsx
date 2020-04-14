@@ -1,21 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Root from "./Root";
-import Header from "./Header";
-import HeadNav from "./HeadNav";
+import BeforeDB from "./BeforeDB";
+import PostsRender from "./PostsRender";
+import AfterDB from "./AfterDB";
 
 ReactDOM.hydrate(
-    <Header />,
-    document.getElementById("header")
+    <BeforeDB />,
+    document.getElementById("beforeDB")
 );
 
 ReactDOM.hydrate(
-    <HeadNav />,
-    document.getElementById("headnav")
-);
-
-ReactDOM.hydrate(
-    <Root compiler="TypeScript" framework="Express" library="React" />,
-    document.getElementById("root")
+    <AfterDB />,
+    document.getElementById("afterDB")
 );
