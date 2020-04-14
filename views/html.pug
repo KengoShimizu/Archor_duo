@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="description" content="ページの内容を表す文章")
+    
+    // favicon
+    link(rel="icon" href="#" sizes="16x16" type="image/png")
+    
+    // Twitterカード
+    meta(property="og:url" content="ページのURL")
+    meta(property="og:title" content="ページのタイトル")
+    meta(property="og:type" content="ページのタイプ")
+    meta(property="og:description" content="記事の抜粋")
+    meta(property="og:image" content="画像のURL")
+    meta(name="twitter:card" content="カード種類")
+    meta(name="twitter:site" content="@Twitterユーザー名")
+    meta(property="og:site_name" content="サイト名")
+    meta(property="og:locale" content="ja_JP")
+    meta(property="fb:app_id" content="appIDを入力")
+      
+    // スマホページ保存時表示画像
+    link(rel="apple-touch-icon-precomposed" href="#")
+    
+    .
+      !{initialStyleTag}
+    
+    style(type="text/css").
+      !{css}
+    title Title
+  body(style={margin: 0})
+    #beforeDB.
+      !{beforeDB}
+    #postsrender.
+      !{postsrender}
+    #afterDB.
+      !{afterDB}
+    script(async, defer, src='js/bundle.js')

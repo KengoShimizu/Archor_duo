@@ -4,13 +4,12 @@ import { renderToString } from 'react-dom/server';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import { collectInitial } from 'node-style-loader/collect';
 
-import html from '../views/pages/html';
 import BeforeDB from "../views/components/BeforeDB";
 import PostsRender from "../views/components/PostsRender";
 import AfterDB from "../views/components/AfterDB";
 
 module.exports = {
-  ssr: (result: {id: number; name: string; text: string;}[]) => {
+  ssr: (result: {name: string; roomID: string; comment: string; posttime: Date;}[]) => {
     const beforeDB = renderToString(React.createElement(BeforeDB));
     const postsrender = renderToString(React.createElement(PostsRender, {result}));
     const afterDB = renderToString(React.createElement(AfterDB));
@@ -38,8 +37,12 @@ module.exports = {
 
     const initialStyleTag = collectInitial();
 
-    const elements = { css, initialStyleTag, beforeDB, postsrender, afterDB };
+    const elements = { css: css,
+                       initialStyleTag: initialStyleTag,
+                       beforeDB: beforeDB,
+                       postsrender: postsrender,
+                       afterDB: afterDB };
 
-    return html({elements});
+    return elements;
   }
 }

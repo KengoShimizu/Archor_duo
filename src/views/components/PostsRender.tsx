@@ -5,7 +5,12 @@ import PostsRenderCss from '../sass/PostsRenderCss.scss';
 import CommonCss from '../sass/CommonCss.scss';
 
 interface Props{
-  result: {id: number; name: string; text: string;}[];
+  result: {
+    name: string;
+    roomID: string;
+    comment: string;
+    posttime: Date;
+  }[];
 }
 
 class PostsRender extends React.Component<Props, {}> {
@@ -26,7 +31,7 @@ class PostsRender extends React.Component<Props, {}> {
                         variant="body2"
                         className={PostsRenderCss.inline}
                         color="textSecondary">
-                        — to
+                        {(item.posttime.getTime()-17182304).toString()}
                       </Typography>
                     </React.Fragment>
                   }
@@ -35,7 +40,7 @@ class PostsRender extends React.Component<Props, {}> {
                       <Paper
                         elevation={0}
                         className={PostsRenderCss.paperStyle}>
-                          {item.text}
+                        {item.roomID}<br />{item.comment}
                       </Paper>
                     </React.Fragment>
                   }

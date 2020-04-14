@@ -3,6 +3,9 @@ const postController = require('./controllers/postController');
 
 const app = express();
 
+app.engine('pug', require('pug').__express);
+app.set('view engine', 'pug');
+
 app.get('/', postController.doGetPostForSsr);
 
 //静的ファイル
