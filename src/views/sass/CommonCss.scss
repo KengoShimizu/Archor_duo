@@ -1,5 +1,9 @@
 .appbar{
-  flex-grow: 1;
+  background-color: #333631 !important;
+  color: white !important;
+  .appbarText{
+    flex-grow: 1;
+  }
 }
 
 .Title{
