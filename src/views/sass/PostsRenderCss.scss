@@ -1,3 +1,7 @@
+.kousinNum{
+  margin-left: 10px;
+  color: #F37D7D;
+}
 .postsList {
   width: 100%;
   max-width: 36ch;
@@ -15,5 +19,13 @@
     padding: 10px !important;
     word-wrap: break-word !important;
     background-color: #f8f8f8 !important;
+    .roomID{
+      font-weight: bold;
+    }
+    .comment{
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+    }
   }
 }

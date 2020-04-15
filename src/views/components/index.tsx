@@ -34,10 +34,34 @@ ReactDOM.hydrate(
     document.getElementById("beforeDB")
 );
 
-ReactDOM.hydrate(
-    <PostsRender result={data} />,
-    document.getElementById("postsrender")
-);
+let counter = 0;
+let renderDB = setInterval(
+  function() {
+    counter += 1;
+    ReactDOM.hydrate(
+        <PostsRender result={data} counter={counter} />,
+        document.getElementById("postsrender")
+    );
+    if (counter == 10) {
+      counter = 0;
+      fetch('/', {
+        method: 'POST',
+      }).then( data_upd => data_upd.json() )
+        .then( data_upd => {
+          //Date型に戻す
+          if(typeof data_upd[0].posttime === 'string'){
+            data_upd.forEach((obj: any) => {
+              obj.posttime = new Date(obj.posttime);
+            });
+          }
+          ReactDOM.hydrate(
+            <PostsRender result={data_upd} counter={counter} />,
+            document.getElementById("postsrender")
+          );
+          data = data_upd;
+        });
+    }
+  }, 1000);
 
 ReactDOM.hydrate(
     <AfterDB />,
