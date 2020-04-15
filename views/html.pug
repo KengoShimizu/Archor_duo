@@ -37,4 +37,7 @@ html(lang="ja")
       !{postsrender}
     #afterDB.
       !{afterDB}
+      
+    script(type='application/json' id="json-data").
+      !{JSON.stringify(result)}
     script(async, defer, src='js/bundle.js')

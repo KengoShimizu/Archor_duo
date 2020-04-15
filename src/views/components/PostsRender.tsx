@@ -22,29 +22,15 @@ class PostsRender extends React.Component<Props, {}> {
         <div className={PostsRenderCss.postsListWrap}>
           {result.map((item) => (
             <List className={PostsRenderCss.postsList}>
-              <ListItem alignItems="flex-start">
-                <ListItemText
-                  primary={
-                    <React.Fragment>
-                      {item.name + " "}
-                      <Typography
-                        variant="body2"
-                        className={PostsRenderCss.inline}
-                        color="textSecondary">
-                        {(item.posttime.getTime()-17182304).toString()}
-                      </Typography>
-                    </React.Fragment>
-                  }
-                  secondary={
-                    <React.Fragment>
-                      <Paper
-                        elevation={0}
-                        className={PostsRenderCss.paperStyle}>
-                        {item.roomID}<br />{item.comment}
-                      </Paper>
-                    </React.Fragment>
-                  }
-                />
+              <ListItem alignItems="flex-start" className={PostsRenderCss.noneFlex}>
+                <div className={CommonCss.mb10}>
+                  {`${item.name} `}<span className={PostsRenderCss.gray}>{item.posttime.getTime().toString()}</span>
+                </div>
+                <Paper
+                  elevation={0}
+                  className={PostsRenderCss.paperStyle}>
+                  {item.roomID}<br />{item.comment}
+                </Paper>
               </ListItem>
             <Divider component="li" />
           </List>

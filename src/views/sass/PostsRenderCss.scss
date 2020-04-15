@@ -2,12 +2,18 @@
   width: 100%;
   max-width: 36ch;
   background-color: white;
-  .inline {
-    display: inline;
+  .noneFlex{
+    display: block !important;
+    .gray{
+      color: gray;
+      font-size: 13px;
+    }
   }
   .paperStyle {
-    padding: 10px;
-    word-wrap: break-word;
-    background-color: #f8f8f8;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    word-wrap: break-word !important;
+    background-color: #f8f8f8 !important;
   }
 }

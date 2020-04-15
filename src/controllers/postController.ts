@@ -6,7 +6,6 @@ const ssrController = require('./ssrController');
 module.exports = {
   doGetPostForSsr: (req: express.Request, res: express.Response) => {
     Posts.getPost().then((result) => {
-      //res.send(ssrController.ssr(result));
       const elements = ssrController.ssr(result);
       res.render("html", elements);
     }).catch((err) => {console.log(err);})

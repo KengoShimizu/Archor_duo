@@ -37,12 +37,11 @@ module.exports = {
 
     const initialStyleTag = collectInitial();
 
-    const elements = { css: css,
-                       initialStyleTag: initialStyleTag,
-                       beforeDB: beforeDB,
-                       postsrender: postsrender,
-                       afterDB: afterDB };
-
-    return elements;
+    return { css: css,
+             initialStyleTag: initialStyleTag,
+             beforeDB: beforeDB,
+             postsrender: postsrender,
+             afterDB: afterDB,
+             result: result };
   }
 }
