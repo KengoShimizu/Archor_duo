@@ -23,10 +23,12 @@ else{
 }
 
 //Date型に戻す
-if(typeof data[0].posttime === 'string'){
-  data.forEach((obj: any) => {
-    obj.posttime = new Date(obj.posttime);
-  });
+if(data.length !== 0){
+  if(typeof data[0].posttime === 'string'){
+    data.forEach((obj: any) => {
+      obj.posttime = new Date(obj.posttime);
+    });
+  }
 }
 
 ReactDOM.hydrate(

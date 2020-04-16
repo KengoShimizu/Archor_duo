@@ -33,6 +33,9 @@ class PostsRender extends React.Component<Props, {}> {
             else if(secDiff > 1200){ displayDiff = 'かなり前'; }
             else if(secDiff > 600){ displayDiff = '10分以上前'; }
             else if(secDiff > 300){ displayDiff = '5分以上前'; }
+            else if(secDiff > 240){ displayDiff = '4分以上前'; }
+            else if(secDiff > 180){ displayDiff = '3分以上前'; }
+            else if(secDiff > 120){ displayDiff = '2分以上前'; }
             else if(secDiff > 60){ displayDiff = '1分以上前'; }
 
             return (<List className={PostsRenderCss.postsList}>
